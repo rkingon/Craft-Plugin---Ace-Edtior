@@ -1,0 +1,8 @@
+.ace_editor {
+	width:100%; height:300px; border-radius:3px;
+}
+
+.ace_gutter,
+.ace_scroller {
+	padding-top:6px; padding-bottom:6px;
+}

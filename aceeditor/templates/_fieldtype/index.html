@@ -1,0 +1,28 @@
+{% import "_includes/forms" as forms %}
+
+{% set mode = value ? value.mode : "" %}
+{% set content = value ? value.content : "" %}
+
+<div class="matrixblock">
+	<div class="titlebar" style="padding:0 !important;"></div>
+	<div class="fields">
+		{{ forms.selectField({
+			id: id ~ "-mode",
+			name: name ~ "[mode]",
+			value: mode,
+			options: modes
+		}) }}
+		<div class="field">
+			<div class="input ltr">
+				<div id="{{ id }}-editor">{{ content }}</div>
+			</div>
+		</div>
+		<div class="hidden">
+			{{ forms.textareaField({
+				id: id ~ "-content",
+				name: name ~ "[content]",
+				value: content
+			}) }}
+		</div>
+	</div>
+</div>
